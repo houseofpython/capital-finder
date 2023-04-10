@@ -4,12 +4,12 @@ import requests
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        s = self.path
-        url_components = parse.urlsplit(s)
-        print('url.components', url_components)
-        query_string_list = parse.parse_qsl(url_components.query)
-        print("query.string.list", query_string_list)
-        dic = dict(query_string_list)
+        # s = self.path
+        # url_components = parse.urlsplit(s)
+        # print('url.components', url_components)
+        # query_string_list = parse.parse_qsl(url_components.query)
+        # print("query.string.list", query_string_list)
+        # dic = dict(query_string_list)
         #
         # if capital in dic:
         #     url = f"https://restcountries.com/v3.1/capital/{capital}"
@@ -24,6 +24,7 @@ class handler(BaseHTTPRequestHandler):
         # else:
         #     message = "Give me a city name please"
         message = "test message"
+        print(message)
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
