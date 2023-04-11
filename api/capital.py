@@ -22,7 +22,7 @@ class handler(BaseHTTPRequestHandler):
                 country = capital_data['name']['official']
                 print(country)
                 definitions.append(country)
-            message = str(definitions)
+            message = f'The capital of {capital} is {definitions}'
         elif country:
             country_url = f'https://restcountries.com/v3.1/name/{country}'
             r = requests.get(country_url)
@@ -31,7 +31,7 @@ class handler(BaseHTTPRequestHandler):
             for country_data in data:
                 capital_name = country_data['capital'][0]
                 definitions.append(capital_name)
-            message = str(definitions)
+            message = f'The country {definitions} has a capital of {country}'
         else:
             message = "Give me a city name please"
         # message = "test message"
