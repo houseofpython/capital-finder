@@ -19,7 +19,7 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             definitions = []
             for capital_data in data:
-                country = capital_data[0]['capital'][0]
+                country = capital_data['name']['official']
                 print(country)
                 definitions.append(country)
             message = str(definitions)
@@ -29,8 +29,8 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             definitions = []
             for country_data in data:
-                capital_name = country_data[0]['capital'][0]
-                definitions.apped(capital_name)
+                capital_name = country_data['capital'][0]
+                definitions.append(capital_name)
             message = str(definitions)
         else:
             message = "Give me a city name please"
